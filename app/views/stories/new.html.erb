@@ -1,2 +1,10 @@
 <h1>Create A new Story! </h1>
+	<%= form_for :story do |f| %>
+		<%= f.label :content %>:
+  		<%= f.text_area :content, :class => "tinymce", :rows => 30, :cols => 120 %>
+
+	<% end %>
+
+
+
 
