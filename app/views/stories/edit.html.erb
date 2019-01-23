@@ -1,0 +1,12 @@
+<h1 align="center">Edit This Story </h1>
+	
+	<%= simple_form_for(@story) do |f| %>
+		
+		<%= f.input :tag %>
+		<%= f.input :title %>
+  		<%= f.text_area :content, label:'Your Story', :class => "tinymce", :rows => 30, :cols => 120 %>
+
+  		<%= f.button :submit, class: "btn btn-success" %>
+	<% end %>
+
+<%= tinymce %>	
