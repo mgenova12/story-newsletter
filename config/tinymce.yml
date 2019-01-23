@@ -6,4 +6,7 @@ plugins:
   - link
   - wordcount
   - paste
-  - table
+  - table 
+  - autosave
+  - print
+  - media 

@@ -26,5 +26,6 @@
     </tr>
   </table>
 <br>
+
 <%= link_to "Edit Story", edit_story_path, class: "btn btn-primary" %>
 <%= link_to "Delete Story", { action: "destroy", id: "#{params[:id]}" }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
