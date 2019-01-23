@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   
   def index
-    @stories = Story.all
+    @stories = Story.all.reverse
   end
 
   def new
@@ -9,10 +9,14 @@ class StoriesController < ApplicationController
   end
 
   def create
-    employee = Story.new(story_params)
+    @story = Story.new(story_params)
 
-    if employee.save
+    if @story.save
+      flash[:success] = "Story Succesfully Created!"
       redirect_to "/stories"
+    else 
+      flash[:danger] = @story.errors.full_messages
+      render 'new'
     end
   end
 
@@ -25,11 +29,15 @@ class StoriesController < ApplicationController
   end
 
   def update
-    story = Story.find(params[:id])
+    @story = Story.find(params[:id])
 
-    story.update(story_params)
-
-    redirect_to "/stories/#{story.id}"
+    if @story.update(story_params)
+      flash[:success] = "Story Succesfully Updated!"
+      redirect_to "/stories/#{@story.id}"
+    else
+      flash[:danger] = @story.errors.full_messages
+      render 'edit'
+    end
   end
 
   def destroy
