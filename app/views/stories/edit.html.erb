@@ -1,7 +1,6 @@
 <h1 align="center">Edit This Story </h1>
 	
-	<%= simple_form_for(@story) do |f| %>
-		
+	<%= simple_form_for @story do |f| %>
 		<%= f.input :title %>
 		<%= f.input :tag %>
   		<%= f.text_area :content, label:'Your Story', :class => "tinymce", :rows => 30, :cols => 120 %>

@@ -1,13 +1,12 @@
 <h1 align="center">Create A New Story! </h1>
 	
 	<%= simple_form_for @story do |f| %>
-		
 		<%= f.input :title %>
 		<%= f.input :tag %>
   		<%= f.text_area :content, label:'Your Story', :class => "tinymce", :rows => 30, :cols => 120 %>
+  		<%= f.hidden_field :newsletter_id, :value => @newsletter_id %>
   		<br>
   		<%= f.button :submit, class: "btn btn-success" %>
 	<% end %>
-
 
 <%= tinymce %>

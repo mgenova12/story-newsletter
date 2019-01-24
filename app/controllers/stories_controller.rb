@@ -1,10 +1,12 @@
 class StoriesController < ApplicationController
+  include StoriesHelper
   
   def index
     @stories = Story.all.reverse
   end
 
   def new
+    get_newsletter_id
     @story = Story.new
   end
 
@@ -52,7 +54,7 @@ class StoriesController < ApplicationController
   private 
 
   def story_params
-    params.require(:story).permit(:title, :tag, :content)
+    params.require(:story).permit(:title, :tag, :content, :newsletter_id)
   end
 
 end
