@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   include StoriesHelper
   
   def index
-    @stories = Story.all.reverse
+    @stories = Story.order(:created_at).reverse
   end
 
   def new
@@ -47,7 +47,6 @@ class StoriesController < ApplicationController
     story.destroy
 
     redirect_to "/stories"
-
   end
 
 

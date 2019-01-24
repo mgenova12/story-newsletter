@@ -1,8 +1,8 @@
-	<h1>Choose NewsLetter By Date</h1>
+	<h1>Choose Newsletter By Date</h1>
 
 	<ul class="list-group list-group-flush">
 		<% @newsletters.each do |newsletter| %>
-	  		<a href="/newsletters/<%= newsletter.id %>"><li class="list-group-item"><%= newsletter.created_at.strftime('%A, %d %b %Y') %></li></a>
+	  		<a href="/newsletters/<%= newsletter.id %>"><li class="list-group-item"><%= date_format(newsletter.created_at) %></li></a>
 		<% end %>
 	</ul>
 

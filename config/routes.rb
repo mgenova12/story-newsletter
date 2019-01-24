@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
   resources :stories
-  resources :newsletters
+  resources :newsletters, only: [:index, :show]
 
 end

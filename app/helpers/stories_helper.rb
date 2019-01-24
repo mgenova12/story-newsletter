@@ -1,7 +1,7 @@
 module StoriesHelper
 
   def get_newsletter_id
-    if Newsletter.last.created_at.strftime('%A, %d %b %Y') != Date.today.strftime('%A, %d %b %Y')
+    if Newsletter.last.created_at.beginning_of_day == Date.today.beginning_of_day
       @newsletter_id = Newsletter.last.id
     else
       Newsletter.create

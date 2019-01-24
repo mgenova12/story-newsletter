@@ -9,12 +9,15 @@
   </head>
 	
 	<nav class="navbar navbar-light bg-light">
-		  <a class="navbar-brand" href="/stories">All Stories</a>
+  	  <a class="navbar-brand" href="/stories">
+        <img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/3413778-e32e15e878677205e5e559dfc5c031c7-medium_jpg.jpg?buster=1515195527" width="30" height="30" alt="">
+      </a>
+      <a class="navbar-brand" href="/stories">All Stories</a>
 	  	<a class="navbar-brand" href="/newsletters">View All Newsletters</a>
       <a class="navbar-brand" href="/stories/new">Create A New Story</a>
 	</nav>
   	
-  	<%= render "/shared/alerts" %>
+  <%= render "/shared/alerts" %>
   <body class="container-fluid">
 
     <%= yield %>

@@ -5,7 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+5.times do 
 
-  15.times do 
-    Story.create(title:Faker::Book.title , tag: Faker::Book.genre, content: Faker::Lorem.paragraph(5))
+  newsletter = Newsletter.create
+  newsletter.created_at = (rand*10).days.ago
+  newsletter.save
+
+  5.times do 
+    Story.create(title:Faker::Book.title , tag: Faker::Book.genre, content: Faker::Lorem.paragraph(5), newsletter_id: newsletter.id)
   end
+
+end
